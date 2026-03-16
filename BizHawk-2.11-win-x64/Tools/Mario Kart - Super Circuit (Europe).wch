@@ -1,0 +1,11 @@
+SystemID GBA
+3C5F	b	b	0	IWRAM	Start Race/Lap
+3BCE	w	u	0	IWRAM	Checkpoint/Lap progress
+3C1E	b	u	0	IWRAM	Surface type
+3C56	w	u	0	IWRAM	Speed
+3B98	d	3	0	IWRAM	Position X
+3B9C	d	3	0	IWRAM	Position Y
+3BA2	b	s	0	IWRAM	Position Z
+33C0	b	u	0	IWRAM	On-map
+3AC4	b	u	0	IWRAM	Cloud
+

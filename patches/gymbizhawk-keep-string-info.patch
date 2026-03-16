@@ -1,0 +1,18 @@
+diff --git a/gymbizhawk/bizhawk.py b/gymbizhawk/bizhawk.py
+index 0000000..0000000 100644
+--- a/gymbizhawk/bizhawk.py
++++ b/gymbizhawk/bizhawk.py
+@@
+     def _decode_info(self, info_str: str):
+         info = {}
+         for pair in info_str.strip().split("#"):
+             d = pair.strip().split(":")
+             if len(d) != 2:
+                 continue
+             try:
+                 info[d[0]] = float(d[1])
+             except ValueError:
+-                pass
++                # Keep non-numeric values (e.g. done_reason) instead of dropping them.
++                info[d[0]] = d[1]
+         return info
