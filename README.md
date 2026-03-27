@@ -1,6 +1,10 @@
 ﻿# MKSC PPO Training with BizHawk
 
-This project trains a PPO agent from screenshots only on **Mario Kart: Super Circuit** using:
+This project trains a PPO agent from screenshots from **Mario Kart: Super Circuit** 
+
+Video of learned agent after approx. 15 million steps: <https://youtu.be/80bOWpP_WsE>
+
+This project is using:
 
 - `BizHawk` as the emulator
 - `GymBizHawk` as the Python <-> BizHawk bridge
@@ -243,7 +247,7 @@ Current behavior:
 - reward is computed in Lua
 - termination happens in Lua
 - after termination, Python resets the environment
-- reset uses `savestate.loadslot(1)` in BizHawk
+- reset uses `savestate.loadslot(1)` in BizHawk, so savestate 1 has to be created manually prior to learning
 
 Typical terminal reasons include:
 
@@ -303,23 +307,3 @@ If using `lin_...` schedules, that is expected. Try constant values such as:
 learning_rate: 2.5e-4
 clip_range: 0.1
 ```
-
-## Files worth backing up
-
-To preserve the experiment setup:
-
-- [main.py](./main.py)
-- [mksc.py](./mksc.py)
-- [mksc.lua](./mksc.lua)
-- [mksc.yml](./mksc.yml)
-- `.env`
-- [pyproject.toml](./pyproject.toml)
-- `uv.lock`
-
-To preserve learned models and history too:
-
-- `logs/`
-- `runs/`
-
-
-
